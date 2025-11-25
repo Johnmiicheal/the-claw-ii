@@ -10,6 +10,7 @@ import ChristmasLights from '@/components/UI/ChristmasLights';
 import ChristmasTree from '@/components/UI/ChristmasTree';
 import StartScreen from '@/components/UI/StartScreen';
 import GameOverScreen from '@/components/UI/GameOverScreen';
+import MobileWarning from '@/components/UI/MobileWarning';
 
 const LoadingFallback = () => (
     <Html center>
@@ -52,6 +53,8 @@ export default function Home() {
   }, [gameStatus, timeLeft, decrementTime, endGame]);
 
   return (
+    <>
+    <MobileWarning />
     <main className="flex min-h-screen flex-col md:flex-row bg-black text-white overflow-hidden">
       
       {/* Left Panel: Computer Vision / Webcam */}
@@ -142,6 +145,7 @@ export default function Home() {
                 </ul>
             </div>
         </div>
+                <p className="font-mono text-xs text-slate-400">Original concept and implementation by <a href="https://x.com/measure_plan/status/1993050841155309644" target="_blank" className="text-yellow-400">[@measure_plan](https://x.com/measure_plan/status/1993050841155309644)</a></p>
       </div>
 
       {/* Right Panel: Arcade Cabinet */}
@@ -262,5 +266,6 @@ export default function Home() {
       </div>
 
     </main>
+    </>
   );
 }
